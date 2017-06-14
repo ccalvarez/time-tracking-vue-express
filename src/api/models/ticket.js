@@ -10,8 +10,8 @@ const ticketSchema = mongoose.Schema({
   activity: { type: Schema.Type.ObjectId, required: false, ref: 'Activity', index: true },
   createdAt: { type: Date, required: true },
   closedAt: { type: Date, required: false },
-  status: { type: String, enum: ['E', 'C'], required: false }, //E=Escalado, C=Cierre... ver otros y default: 'x'
-  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'User' }
+  status: { type: String, enum: ['Asignada', 'EnProceso', 'Escalada', 'EnEspera', 'Vencida', 'Cierre'], required: false },
+  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'AppUser' }
 });
 
 Ticket = mongoose.model('Ticket', ticketSchema);

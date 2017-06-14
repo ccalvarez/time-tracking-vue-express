@@ -9,7 +9,7 @@ const activitySchema = mongoose.Schema({
   comments: { type: String },
   finished: { type: Boolean, required: true, default: false },
   system: { type: Schema.Types.ObjectId, required: false, ref: 'System' },
-  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'User' }
+  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'AppUser' }
 }, { collection: 'activities' });
 
 Activity = mongoose.model('Activity', activitySchema);

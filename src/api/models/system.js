@@ -4,7 +4,7 @@ let System = null;
 
 const systemSchema = mongoose.Schema({
   name: { type: String, required: true, unique: true, index: true },
-  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'User' }
+  user: { type: Schema.Type.ObjectId, required: true, index: true, ref: 'AppUser' }
 });
 
 System = mongoose.model('System', systemSchema);
